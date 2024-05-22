@@ -1,16 +1,18 @@
 package models;
+
 import java.util.ArrayList;
 
 public class Hand {
 
-  private ArrayList<Die> hand = new ArrayList<>();
-  private int score;
+  private ArrayList<Integer> dice = new ArrayList<>();
 
-  public ArrayList<Die> addDie(Die die) {
+  private int score = 0;
 
-    hand.add(die);
+  public ArrayList<Integer> add(int die) {
 
-    return hand;
+    dice.add(die);
+
+    return dice;
   }
 
   public int calculateScore(int[] dice) {
@@ -20,5 +22,69 @@ public class Hand {
     }
 
     return score;
+  }
+
+  public String getScore() {
+
+    String playerScore = Integer.toString(this.score);
+
+    return playerScore;
+  }
+
+  public void announceRoll(int die) {
+
+    switch (die) {
+      case 1:
+        System.out.println(
+            "\n" +
+                "________" + "\n" +
+                "|       |" + "\n" +
+                "|   .   |" + "\n" +
+                "|_______|" + "\n");
+        break;
+
+      case 2:
+        System.out.println(
+            "\n" +
+                "________" + "\n" +
+                "|   .   |" + "\n" +
+                "|   .   |" + "\n" +
+                "|_______|" + "\n");
+        break;
+      case 3:
+        System.out.println(
+            "\n" +
+                "_______" + "\n" +
+                "|   .  |" + "\n" +
+                "|  . . |" + "\n" +
+                "|______|" + "\n");
+        break;
+      case 4:
+        System.out.println(
+            "\n" +
+                "_______" + "\n" +
+                "|  . . |" + "\n" +
+                "|  . . |" + "\n" +
+                "|______|" + "\n");
+        break;
+      case 5:
+        System.out.println(
+            "\n" +
+                "_______" + "\n" +
+                "|  . . |" + "\n" +
+                "| . . .|" + "\n" +
+                "|______|" + "\n");
+        break;
+      case 6:
+        System.out.println(
+            "\n" +
+                "_______" + "\n" +
+                "| . . .|" + "\n" +
+                "| . . .|" + "\n" +
+                "|______|" + "\n");
+        break;
+    }
+
+    System.out.println("A " + die + " was rolled.");
   }
 }
