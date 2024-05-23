@@ -1,11 +1,12 @@
-import models.Hand;
+import models.Die;
 
 public class Main {
 
   public static void main(String[] args) {
 
-    Hand hand = new Hand();
+    Die die = new Die();
 
-    hand.announceRoll(6);
+    die.roll();
+    die.stateRoll();
   }
 }

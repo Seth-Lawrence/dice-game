@@ -3,7 +3,6 @@ package models;
 import java.util.ArrayList;
 
 public class Dealer {
-
   Hand hand = new Hand();
 
   public int getInitialHand() {
@@ -18,7 +17,7 @@ public class Dealer {
   }
 
   public void play() {
-    while (hand.score < 14) {
+    while (hand.getScore() < 14) {
       hit();
     }
   }

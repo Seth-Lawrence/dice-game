@@ -2,17 +2,16 @@ package models;
 
 import java.util.ArrayList;
 
+
 public class Hand {
-
   private ArrayList<Integer> dice = new ArrayList<>();
-
   private int score = 0;
 
   public ArrayList<Integer> add(int die) {
 
     dice.add(die);
 
-    return dice;
+    return new ArrayList<>(dice);
   }
 
   public int calculateScore(int[] dice) {
@@ -24,67 +23,9 @@ public class Hand {
     return score;
   }
 
-  public String getScore() {
+  public int getScore() {
 
-    String playerScore = Integer.toString(this.score);
-
-    return playerScore;
+    return this.score;
   }
 
-  public void announceRoll(int die) {
-
-    switch (die) {
-      case 1:
-        System.out.println(
-            "\n" +
-                "________" + "\n" +
-                "|       |" + "\n" +
-                "|   .   |" + "\n" +
-                "|_______|" + "\n");
-        break;
-
-      case 2:
-        System.out.println(
-            "\n" +
-                "________" + "\n" +
-                "|   .   |" + "\n" +
-                "|   .   |" + "\n" +
-                "|_______|" + "\n");
-        break;
-      case 3:
-        System.out.println(
-            "\n" +
-                "_______" + "\n" +
-                "|   .  |" + "\n" +
-                "|  . . |" + "\n" +
-                "|______|" + "\n");
-        break;
-      case 4:
-        System.out.println(
-            "\n" +
-                "_______" + "\n" +
-                "|  . . |" + "\n" +
-                "|  . . |" + "\n" +
-                "|______|" + "\n");
-        break;
-      case 5:
-        System.out.println(
-            "\n" +
-                "_______" + "\n" +
-                "|  . . |" + "\n" +
-                "| . . .|" + "\n" +
-                "|______|" + "\n");
-        break;
-      case 6:
-        System.out.println(
-            "\n" +
-                "_______" + "\n" +
-                "| . . .|" + "\n" +
-                "| . . .|" + "\n" +
-                "|______|" + "\n");
-        break;
-    }
-
-    System.out.println("A " + die + " was rolled.");
-  }
 }
