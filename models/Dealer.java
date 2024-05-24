@@ -33,15 +33,6 @@ public class Dealer {
     announceScore();
   }
 
-
-  public int scoreHand(ArrayList<Integer> dice) {
-    for (int die : dice) {
-      score += die;
-    }
-
-    return score;
-  }
-
   public void announceScore() {
     System.out.println("Dealer's score is" + this.score);
   }
