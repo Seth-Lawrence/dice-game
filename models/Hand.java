@@ -7,6 +7,7 @@ public class Hand {
   private ArrayList<Integer> dice = new ArrayList<>();
   private int score = 0;
 
+
   public ArrayList<Integer> add(int die) {
 
     dice.add(die);
@@ -14,18 +15,22 @@ public class Hand {
     return new ArrayList<>(dice);
   }
 
-  public int calculateScore(int[] dice) {
+  public int calculateScore() {
 
-    for (int i : dice) {
-      this.score += i;
+    for (int dieVal : dice) {
+      this.score += dieVal;
     }
 
-    return score;
+    return this.score;
   }
 
   public int getScore() {
 
     return this.score;
+  }
+
+  public void announceScore() {
+    System.out.println("score: " + this.score);
   }
 
 }

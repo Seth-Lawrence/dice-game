@@ -29,7 +29,7 @@ public class Dealer {
 
     hand.add(r1);
 
-    this.score = scoreHand(hand);
+    hand.calculateScore();
     announceScore();
   }
 
