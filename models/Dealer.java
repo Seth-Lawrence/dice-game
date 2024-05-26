@@ -1,7 +1,5 @@
 package models;
 
-import java.util.ArrayList;
-
 public class Dealer {
   Hand hand = new Hand();
 
@@ -17,7 +15,7 @@ public class Dealer {
   }
 
   public void play() {
-    while (hand.getScore() < 14) {
+    while (hand.getScore() < 12) {
       hit();
     }
   }
@@ -28,12 +26,6 @@ public class Dealer {
     int r1 = d1.roll();
 
     hand.add(r1);
-
-    hand.calculateScore();
-    announceScore();
-  }
-
-  public void announceScore() {
-    System.out.println("Dealer's score is" + this.score);
+    hand.announceScore();
   }
 }

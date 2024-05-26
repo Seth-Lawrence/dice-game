@@ -15,7 +15,7 @@ public class Hand {
     return new ArrayList<>(dice);
   }
 
-  public int calculateScore() {
+  private int calculateScore() {
 
     for (int dieVal : dice) {
       this.score += dieVal;
@@ -26,10 +26,12 @@ public class Hand {
 
   public int getScore() {
 
+    this.score = this.calculateScore();
     return this.score;
   }
 
   public void announceScore() {
+    this.getScore();
     System.out.println("score: " + this.score);
   }
 
