@@ -5,9 +5,6 @@ public class Hand {
   private ArrayList<Integer> dice = new ArrayList<>();
   private int score = 0;
 
-
-
-
   public int add() {
     Die d1 = new Die();
 
